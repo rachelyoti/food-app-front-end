@@ -23,7 +23,7 @@ export default class Step1 extends React.Component {
           selectedValue={this.state.user}
           style={{ height: 50, width: 100 }}
           onValueChange={(itemValue, itemIndex) =>
-            this.setState({ language: itemValue })
+            this.setState({ user: itemValue })
           }
           prompt="I am a"
         >
