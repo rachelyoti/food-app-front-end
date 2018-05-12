@@ -1,23 +1,22 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react'
+import { StyleSheet, Text, View } from 'react-native'
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>NYC FOOD TRACKER</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
-    );
-  }
-}
+import NavBar from './components/NavBar'
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+import HomeScreen from './screens/HomeScreen'
+import Registration from './screens/Registration'
+import Display from './screens/Display'
+
+import {
+  createStackNavigator,
+} from 'react-navigation'
+
+
+
+const App = createStackNavigator({
+  Home: { screen: HomeScreen },
+  Registration : { screen : Registration },
+  Display : { screen : Display }
 });
+
+export default App;
