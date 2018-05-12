@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View, Picker } from "react-native";
-import { Button } from 'react-native-elements';
+import { Button } from "react-native-elements";
 import NavBar from "./../../components/NavBar";
 import styles from "./../../styles/style";
 
@@ -23,7 +23,8 @@ const foods = [
 export default class Step2 extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { food : "Asparagus" };
+    const user = props.navigation.state.params.data.user;
+    this.state = { food: "Asparagus", data: { user } };
   }
 
   render() {
@@ -40,18 +41,23 @@ export default class Step2 extends React.Component {
           selectedValue={this.state.food}
           style={{ height: 50, width: 100 }}
           onValueChange={(itemValue, itemIndex) =>
-            this.setState({ food : itemValue })}
-            >
+            this.setState({ food: itemValue })
+          }
+        >
           {foods.map(food => (
             <Picker.Item key={food} label={food} value={food} />
           ))}
         </Picker>
         <Button
-            onPress={() => navigate('Reg1')}
-            title="Next Step"
-            large={true}
-            backgroundColor="#1dc890"
-            containerViewStyle={styles.buttonContainer}
+          onPress={() =>
+            navigate("Reg3", {
+              data: { user: this.state.user, food: this.state.food }
+            })
+          }
+          title="Next Step"
+          large={true}
+          backgroundColor="#1dc890"
+          containerViewStyle={styles.buttonContainer}
         />
       </View>
     );

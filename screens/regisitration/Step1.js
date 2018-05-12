@@ -32,7 +32,7 @@ export default class Step1 extends React.Component {
           <Picker.Item label="Retail" value="retail" />
         </Picker>
         <Button
-            onPress={() => navigate('Reg2')}
+            onPress={() => navigate('Reg2', {data : { user : this.state.user}})}
             title="Next Step"
             large={true}
             backgroundColor="#1dc890"
