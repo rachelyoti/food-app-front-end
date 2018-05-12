@@ -1,8 +1,8 @@
 import React from "react";
 import { StyleSheet, Text, View, Picker } from "react-native";
-import NavBar from "./../components/NavBar";
+import NavBar from "./../../components/NavBar";
 
-export default class Registration extends React.Component {
+export default class Step1 extends React.Component {
   constructor(props) {
     super(props);
     this.state = { language: "java" };
@@ -12,7 +12,8 @@ export default class Registration extends React.Component {
     return (
       <View style={styles.container}>
         <NavBar />
-        <Text>Registration</Text>
+        <Text style={styles.stepText}>STEP 1</Text>
+        <Text style={styles.subHeading}>Let's get started.</Text>
         <Picker
           selectedValue={this.state.language}
           style={{ height: 50, width: 100 }}
@@ -34,8 +35,14 @@ export default class Registration extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  stepText: {
+    fontSize : 10
+  },
+  subHeading : {
+    fontSize : 20
   }
 });

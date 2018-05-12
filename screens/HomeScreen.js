@@ -13,7 +13,7 @@ export default class HomeScreen extends React.Component {
         <NavBar />
         <Text>Home </Text>
         <Button
-            onPress={() => navigate('Registration')}
+            onPress={() => navigate('Reg1')}
             title="Get Started"
             color="#841584"
             accessibilityLabel="Learn more about this purple button"

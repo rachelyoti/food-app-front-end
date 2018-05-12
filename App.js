@@ -4,8 +4,9 @@ import { StyleSheet, Text, View } from 'react-native'
 import NavBar from './components/NavBar'
 
 import HomeScreen from './screens/HomeScreen'
-import Registration from './screens/Registration'
 import Display from './screens/Display'
+
+import Step1 from './screens/regisitration/Step1'
 
 import {
   createStackNavigator,
@@ -15,7 +16,7 @@ import {
 
 const App = createStackNavigator({
   Home: { screen: HomeScreen },
-  Registration : { screen : Registration },
+  Reg1 : { screen : Step1 },
   Display : { screen : Display }
 });
 
