@@ -7,6 +7,7 @@ import HomeScreen from './screens/HomeScreen'
 import Display from './screens/Display'
 
 import Step1 from './screens/regisitration/Step1'
+import Step2 from './screens/regisitration/Step2'
 
 import {
   createStackNavigator,
@@ -15,8 +16,9 @@ import {
 
 
 const App = createStackNavigator({
-  Home: { screen: HomeScreen },
+  // Home: { screen: HomeScreen },
   Reg1 : { screen : Step1 },
+  Reg2 : { screen : Step2 },
   Display : { screen : Display }
 });
 
