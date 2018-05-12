@@ -2,13 +2,13 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
-      flex: 1,
-      backgroundColor: "#fff",
-      alignItems: "center",
-      justifyContent: "flex-start"
-    },
-    stepText: {
-        marginTop: 80,
+    flex: 1,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "flex-start"
+  },
+  stepText: {
+    marginTop: 80,
     fontSize: 10
   },
   subHeading: {
@@ -17,13 +17,13 @@ const styles = StyleSheet.create({
   },
   heading: {
     fontSize: 50,
-    fontWeight: "bold"
+    fontWeight: "bold",
+    textAlign : "center"
   },
   buttonContainer: {
     margin: 40,
     position: "absolute",
     bottom: 0
-    // justifyContent : 'flex-end'
   }
 });
 

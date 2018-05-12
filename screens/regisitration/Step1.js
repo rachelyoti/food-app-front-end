@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View, Picker } from "react-native";
-import { Button } from 'react-native-elements'
+import { Button } from 'react-native-elements';
 import NavBar from "./../../components/NavBar";
 import styles from './../../styles/style';
 export default class Step1 extends React.Component {
@@ -20,13 +20,12 @@ export default class Step1 extends React.Component {
         <Text style={styles.heading}>Who are you?</Text>
 
         <Picker
-          selectedValue={this.state.user}
-          style={{ height: 50, width: 100 }}
-          onValueChange={(itemValue, itemIndex) =>
-            this.setState({ user: itemValue })
-          }
-          prompt="I am a"
-        >
+            selectedValue={this.state.user}
+            style={{ height: 50, width: 100 }}
+            onValueChange={(itemValue, itemIndex) =>
+              this.setState({ user: itemValue })
+            }
+          >
           <Picker.Item label="Farmer" value="farmer" />
           <Picker.Item label="Warehouse" value="warehouse" />
           <Picker.Item label="Market" value="market" />
