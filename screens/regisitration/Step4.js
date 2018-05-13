@@ -15,7 +15,7 @@ export default class Step4 extends React.Component {
     super(props);
     console.log("step4 ", props.navigation.state.params)
     const state =  props.navigation.state.params
-    this.state = Object.assign({}, state, { quanity : "1", measurement: 'pounds' });
+    this.state = Object.assign({}, state, { quantity : "1", measurement: 'pounds' });
     console.log("step4 state", this.state)
   }
   
@@ -30,7 +30,7 @@ export default class Step4 extends React.Component {
       
       <FormLabel>Amount</FormLabel>
         <FormInput 
-          onChangeText={(quanity)=>(this.setState({ quanity }))} 
+          onChangeText={(quantity)=>(this.setState({ quantity }))} 
           style={{ width : 100 }}/>
         <Picker
           selectedValue={this.state.measurement}

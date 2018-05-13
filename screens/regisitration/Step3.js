@@ -29,8 +29,22 @@ export default class Step3 extends React.Component {
     console.log("step3 state", this.state)
   }
 
+   _registerParticipant() {
+
+      // Hit composer END point to create package
+      fetch('https://webhook.site/0b2fa181-12ec-46bd-a509-f4a290b1eab1', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(this.state),
+    });
+  }
+
   render() {
     const { navigate } = this.props.navigation;
+    this._registerParticipant()
 
     return (
       <View style={styles.container}>

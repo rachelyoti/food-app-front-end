@@ -9,6 +9,14 @@ export default class Step1 extends React.Component {
     this.state = { user: "farmer" };
   }
 
+  componentDidMount() {
+    navigator.geolocation.getCurrentPosition(
+      (initialPosition) => this.setState({initialPosition}),
+      (error) => alert(error.message),
+      {enableHighAccuracy: true, timeout: 20000, maximumAge: 1000}
+    );
+  }
+
   render() {
     const { navigate } = this.props.navigation;
 
@@ -30,6 +38,7 @@ export default class Step1 extends React.Component {
           <Picker.Item label="Warehouse" value="warehouse" />
           <Picker.Item label="Market" value="market" />
           <Picker.Item label="Retail" value="retail" />
+          <Picker.Item label="Consumer" value="consumer" />
         </Picker>
         <Button
             onPress={() => navigate('Reg2', this.state)}
