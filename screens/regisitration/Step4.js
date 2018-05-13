@@ -4,29 +4,14 @@ import { Button } from "react-native-elements";
 import NavBar from "./../../components/NavBar";
 import styles from "./../../styles/style";
 
-const foods = [
-  "Asparagus",
-  "String Beans",
-  "Shell Beans",
-  "Beets",
-  "Beet Greens",
-  "Broccoli",
-  "Brussels Sprout",
-  "Cabbage",
-  "Carrots",
-  "Cauliflower",
-  "Celery",
-  "Collard Greens",
-  "Corn",
-  "Cucumbers"
-];
-export default class Step3 extends React.Component {
+
+export default class Step4 extends React.Component {
   constructor(props) {
     super(props);
-    console.log("step3 ", props.navigation.state.params)
+    console.log("step4", props.navigation.state.params)
     const state =  props.navigation.state.params
     this.state = Object.assign({}, state, { food : "Asparagus" });
-    console.log("step3 state", this.state)
+    console.log("step4 state", this.state)
   }
 
   render() {
@@ -41,7 +26,7 @@ export default class Step3 extends React.Component {
 
         <Picker
           selectedValue={this.state.food}
-          style={{ height: 50, width: 200 }}
+          style={{ height: 50, width: 100 }}
           onValueChange={(itemValue, itemIndex) =>
             this.setState({ food: itemValue })
           }
@@ -52,7 +37,7 @@ export default class Step3 extends React.Component {
         </Picker>
         <Button
           onPress={() =>
-            navigate("Reg4", this.state)
+            navigate("Reg5", this.state)
           }
           title="Next Step"
           large={true}

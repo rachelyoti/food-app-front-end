@@ -21,7 +21,7 @@ export default class Step1 extends React.Component {
 
         <Picker
             selectedValue={this.state.user}
-            style={{ height: 50, width: 100 }}
+            style={{ height: 50, width: 200 }}
             onValueChange={(itemValue, itemIndex) =>
               this.setState({ user: itemValue })
             }
@@ -32,7 +32,7 @@ export default class Step1 extends React.Component {
           <Picker.Item label="Retail" value="retail" />
         </Picker>
         <Button
-            onPress={() => navigate('Reg2', {data : { user : this.state.user}})}
+            onPress={() => navigate('Reg2', this.state)}
             title="Next Step"
             large={true}
             backgroundColor="#1dc890"
