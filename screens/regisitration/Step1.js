@@ -7,6 +7,7 @@ export default class Step1 extends React.Component {
   constructor(props) {
     super(props);
     this.state = { user: "farmer" };
+    console.log("Step1 State")
   }
 
   componentDidMount() {
