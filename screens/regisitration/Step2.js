@@ -6,14 +6,16 @@ import { Button } from "react-native-elements";
 import NavBar from "./../../components/NavBar";
 import styles from "./../../styles/style";
 
-const farms = [ "Oakley Farm", "Tewksbury", "Yoti Farm"]
+const farms = [ "Bee Tree Berry", "Oakley Farm", "Tewksbury", "Yoti Farm"]
 
 export default class Step2 extends React.Component {
   constructor(props) {
     super(props);
     console.log("step2 Props",props.navigation.state.params)
     const state = props.navigation.state.params
-    this.state = Object.assign({}, state, { farm : "" });
+    this.state = Object.assign({}, state, {});
+    this.state.participant["name"] = "Bee Tree Berry";
+    this.state.participant["$class"] = "grownyc.SupplychainParticipant";
     console.log("step2 state", this.state)
   }
 
@@ -27,14 +29,14 @@ export default class Step2 extends React.Component {
         <Text style={styles.subHeading}>Awesome, thanks!</Text>
         <Text style={styles.heading}>Which farm?</Text>
         <Picker
-            selectedValue={this.state.farm}
+            selectedValue={this.state.participant.name}
             style={{ height: 50, width: 200 }}
             onValueChange={(itemValue, itemIndex) =>
-              this.setState({ farm: itemValue })
+              this.setState({ name: itemValue })
             }
           >
-          {farms.map(farm => (
-            <Picker.Item key={farm} label={farm} value={farm} />
+          {farms.map(name => (
+            <Picker.Item key={name} label={name} value={name} />
           ))}
         </Picker>
         <Button

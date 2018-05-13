@@ -4,9 +4,24 @@ import { Button } from 'react-native-elements';
 import NavBar from "./../../components/NavBar";
 import styles from './../../styles/style';
 export default class Step1 extends React.Component {
+
+
+guid() {
+  function s4() {
+    return Math.floor((1 + Math.random()) * 0x10000)
+      .toString(16)
+      .substring(1);
+  }
+  return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
+}
+
   constructor(props) {
     super(props);
-    this.state = { user: "farmer" };
+    this.state = {};
+    this.state.participant = {};
+    this.state.participant = { participantType: "FARMER" };
+    this.state.participant["address"] = "494 Benner Rd, Bellefonte, PA 16823, USA";
+    this.state.participant["ID"] = this.guid();
   }
 
   componentDidMount() {
@@ -16,6 +31,8 @@ export default class Step1 extends React.Component {
       {enableHighAccuracy: true, timeout: 20000, maximumAge: 1000}
     );
   }
+
+
 
   render() {
     const { navigate } = this.props.navigation;

@@ -25,20 +25,21 @@ export default class Step3 extends React.Component {
     super(props);
     console.log("step3 ", props.navigation.state.params)
     const state =  props.navigation.state.params
-    this.state = Object.assign({}, state, { food : "Asparagus" });
+    this.state = Object.assign({}, state, {});
     console.log("step3 state", this.state)
   }
 
    _registerParticipant() {
 
       // Hit composer END point to create package
-      fetch('https://webhook.site/0b2fa181-12ec-46bd-a509-f4a290b1eab1', {
+      //fetch('http://1a24b2aa.ngrok.io/api/grownyc.SupplychainParticipant', {
+      fetch('https://webhook.site/52f2ad00-5eb5-4546-878d-98812af2abd4', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(this.state),
+      body: JSON.stringify(this.state.participant),
     });
   }
 
