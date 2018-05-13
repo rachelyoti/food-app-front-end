@@ -4,13 +4,29 @@ import { Button } from "react-native-elements";
 import NavBar from "./../../components/NavBar";
 import styles from "./../../styles/style";
 
+const subfoods = [
+  "Asparagus",
+  "String Beans",
+  "Shell Beans",
+  "Beets",
+  "Beet Greens",
+  "Broccoli",
+  "Brussels Sprout",
+  "Cabbage",
+  "Carrots",
+  "Cauliflower",
+  "Celery",
+  "Collard Greens",
+  "Corn",
+  "Cucumbers"
+];
 
 export default class Step4 extends React.Component {
   constructor(props) {
     super(props);
     console.log("step4", props.navigation.state.params)
     const state =  props.navigation.state.params
-    this.state = Object.assign({}, state, { food : "Asparagus" });
+    this.state = Object.assign({}, state, { subfood : "" });
     console.log("step4 state", this.state)
   }
 
@@ -20,18 +36,17 @@ export default class Step4 extends React.Component {
     return (
       <View style={styles.container}>
         <NavBar />
-        <Text style={styles.stepText}>STEP 3</Text>
-        <Text style={styles.subHeading}>Great. Let’s input your goods!.</Text>
-        <Text style={styles.heading}>What is the food item?</Text>
+        <Text style={styles.stepText}>STEP 4</Text>
+        <Text style={styles.heading2}>{`What kind of ${this.state.food} ?`}</Text>
 
         <Picker
-          selectedValue={this.state.food}
+          selectedValue={this.state.subfood}
           style={{ height: 50, width: 100 }}
           onValueChange={(itemValue, itemIndex) =>
-            this.setState({ food: itemValue })
+            this.setState({ subfood: itemValue })
           }
         >
-          {foods.map(food => (
+          {subfoods.map(food => (
             <Picker.Item key={food} label={food} value={food} />
           ))}
         </Picker>

@@ -24,6 +24,10 @@ const styles = StyleSheet.create({
     margin: 40,
     position: "absolute",
     bottom: 0
+  },
+  heading2 : {
+    fontWeight : 'bold',
+    fontSize : 25
   }
 });
 

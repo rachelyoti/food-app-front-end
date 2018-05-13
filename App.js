@@ -9,6 +9,7 @@ import Display from './screens/Display'
 import Step1 from './screens/regisitration/Step1'
 import Step2 from './screens/regisitration/Step2'
 import Step3 from './screens/regisitration/Step3'
+import Step4 from './screens/regisitration/Step4'
 
 import {
   createStackNavigator,
@@ -21,6 +22,7 @@ const App = createStackNavigator({
   Reg1 : { screen : Step1 },
   Reg2 : { screen : Step2 },
   Reg3 : { screen : Step3 },
+  Reg4 : { screen : Step4 },
   Display : { screen : Display }
 });
 
