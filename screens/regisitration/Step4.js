@@ -33,16 +33,16 @@ export default class Step4 extends React.Component {
         
         <FormLabel>Amount</FormLabel>
           <FormInput 
-            onChangeText={(quantity)=>(this.state.package.setState({ quantity : quantity }))} 
+            onChangeText={(quantity)=>(this.setState({package :{ quantity : quantity }}))} 
             style={{ width : 100 }}/>
           <Picker
             selectedValue={this.state.package.quantityType}
             style={{ height: 50, width: 200 }}
             onValueChange={(itemValue, itemIndex) =>
-              this.package.setState({ quantityType: itemValue })
+              this.setState({package:{ quantityType: itemValue }})
             }
           >
-            {numbers.map(number => (
+            {numbers.map(quantityType => (
               <Picker.Item key={quantityType} label={quantityType} value={quantityType} />
             ))}
           </Picker>

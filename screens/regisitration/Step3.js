@@ -61,7 +61,7 @@ export default class Step3 extends React.Component {
           selectedValue={this.state.package.type}
           style={{ height: 50, width: 200 }}
           onValueChange={(itemValue, itemIndex) =>
-            this.setState({ type: itemValue })
+            this.setState({package:{ type: itemValue }})
           }
         >
           {foods.map(type => (
