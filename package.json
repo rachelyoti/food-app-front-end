@@ -27,5 +27,6 @@
     "react-native-navbar": "^2.1.0",
     "react-native-sound": "^0.10.9",
     "react-navigation": "^2.0.1"
+
   }
 }

@@ -15,6 +15,7 @@ import Step6 from './screens/regisitration/Step6'
 
 
 import ConsumerScan from './screens/consumer/Scan'
+import ViewGood from './screens/consumer/ViewGood'
 
 import {
   createStackNavigator,
@@ -31,7 +32,8 @@ const App = createStackNavigator({
   Reg5 : { screen : Step5 },
   Reg6 : { screen : Step6 },
   Display : { screen : Display },
-  ConsumerScan : { screen : ConsumerScan }
+  ConsumerScan : { screen : ConsumerScan },
+  ViewGood : { screen : ViewGood}
 });
 
 export default App;
