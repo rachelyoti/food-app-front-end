@@ -15,7 +15,12 @@ export default class Step4 extends React.Component {
     super(props);
     console.log("step4 ", props.navigation.state.params)
     const state =  props.navigation.state.params;
-    this.state = Object.assign({}, state, { package : { quantity : -1, quantityType : "POUNDS"}  });
+    this.state = Object.assign({}, state, {});
+    this.state.package["$class"] = "grownyc.Package";
+    this.state.package["quantity"] = -1;
+    this.state.package["quantityType"] = "POUNDS";
+
+    // this.state = Object.assign({}, state, { package : {"$class": "grownyc.Package", quantity : -1, quantityType : "POUNDS"}  });
     console.log("step4 state", this.state)
   }
   

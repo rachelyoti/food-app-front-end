@@ -35,8 +35,8 @@ export default class Step3 extends React.Component {
    _registerParticipant() {
 
       // Hit composer END point to create package
-      //fetch('http://1a24b2aa.ngrok.io/api/grownyc.SupplychainParticipant', {
-      fetch('https://webhook.site/52f2ad00-5eb5-4546-878d-98812af2abd4', {
+      fetch('http://1a24b2aa.ngrok.io/api/grownyc.SupplychainParticipant', {
+      //fetch('https://webhook.site/52f2ad00-5eb5-4546-878d-98812af2abd4', {
       method: 'POST',
       headers: {
         Accept: 'application/json',

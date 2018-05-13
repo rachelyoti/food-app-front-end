@@ -27,7 +27,8 @@ export default class Step5 extends React.Component {
     super(props);
     console.log("step5 ", props.navigation.state.params)
     const state =  props.navigation.state.params
-    this.state = Object.assign({}, state, { id: '-1' });
+    this.state = Object.assign({}, state, {});
+    this.state.package["packageId"] = "-1";
     console.log("step5 state", this.state)
   }
 
@@ -46,19 +47,21 @@ export default class Step5 extends React.Component {
     if (result.data !== this.state.lastScannedUrl) {
       LayoutAnimation.spring();
       this.setState({ lastScannedUrl: result.data });
-      this.state.id = result.data;
+      this.state.package["packageId"] = result.data;
       console.log("SCANNED " + result.data);
-      console.log("post scan state --> ", this.state)
+      console.log("post scan state --> ", this.state);
+      console.log("Package data", this.state.package);
 
 
       // Hit composer END point to create package
-      fetch('https://webhook.site/0b2fa181-12ec-46bd-a509-f4a290b1eab1', {
+      fetch('https://webhook.site/52f2ad00-5eb5-4546-878d-98812af2abd4', {
+      // fetch('http://1a24b2aa.ngrok.io/api/grownyc.Package', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(this.state),
+      body: JSON.stringify(this.state.package),
     });
 
       Vibration.vibrate(1000)
