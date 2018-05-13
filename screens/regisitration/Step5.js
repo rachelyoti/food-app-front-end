@@ -21,13 +21,13 @@ import { FormLabel, FormInput, FormValidationMessage } from 'react-native-elemen
 
 
 // const numbers = ['1','2','3','4','5','6','7','8','9','10']
-const numbers =['pounds', 'kgs']
+const numbers =['POUNDS', 'KGS']
 export default class Step5 extends React.Component {
   constructor(props) {
     super(props);
     console.log("step5 ", props.navigation.state.params)
     const state =  props.navigation.state.params
-    this.state = Object.assign({}, state, { quantity : "1", measurement: 'pounds', id: '-1' });
+    this.state = Object.assign({}, state, { id: '-1' });
     console.log("step5 state", this.state)
   }
 
@@ -48,6 +48,7 @@ export default class Step5 extends React.Component {
       this.setState({ lastScannedUrl: result.data });
       this.state.id = result.data;
       console.log("SCANNED " + result.data);
+      console.log("post scan state --> ", this.state)
 
 
       // Hit composer END point to create package
@@ -104,14 +105,16 @@ export default class Step5 extends React.Component {
         <StatusBar hidden />
       </View>
 
-
-        <Button
-          onPress={() => navigate('Reg5', this.state)}
-          title="Next Step"
-          large={true}
-          backgroundColor="#1dc890"
-          containerViewStyle={styles.buttonContainer}
-        />
+      {
+        this.state.id &&
+          <Button
+            onPress={() => navigate('Reg6', this.state)}
+            title="Next Step"
+            large={true}
+            backgroundColor="#1dc890"
+            containerViewStyle={styles.buttonContainer}
+          />
+      }           
       </View>
     );
   }

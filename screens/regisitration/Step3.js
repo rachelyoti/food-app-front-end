@@ -26,6 +26,9 @@ export default class Step3 extends React.Component {
     console.log("step3 ", props.navigation.state.params)
     const state =  props.navigation.state.params
     this.state = Object.assign({}, state, {});
+    this.state.package = {};
+    this.state.package["$class"] = "grownyc.Package";
+    this.state.package["type"] = "Asparagus";
     console.log("step3 state", this.state)
   }
 
@@ -55,14 +58,14 @@ export default class Step3 extends React.Component {
         <Text style={styles.heading}>What is the food item?</Text>
 
         <Picker
-          selectedValue={this.state.food}
+          selectedValue={this.state.package.type}
           style={{ height: 50, width: 200 }}
           onValueChange={(itemValue, itemIndex) =>
-            this.setState({ food: itemValue })
+            this.setState({ type: itemValue })
           }
         >
-          {foods.map(food => (
-            <Picker.Item key={food} label={food} value={food} />
+          {foods.map(type => (
+            <Picker.Item key={type} label={type} value={type} />
           ))}
         </Picker>
         <Button

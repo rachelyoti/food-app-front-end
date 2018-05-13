@@ -24,16 +24,6 @@ guid() {
     this.state.participant["ID"] = this.guid();
   }
 
-  componentDidMount() {
-    navigator.geolocation.getCurrentPosition(
-      (initialPosition) => this.setState({initialPosition}),
-      (error) => alert(error.message),
-      {enableHighAccuracy: true, timeout: 20000, maximumAge: 1000}
-    );
-  }
-
-
-
   render() {
     const { navigate } = this.props.navigation;
 
