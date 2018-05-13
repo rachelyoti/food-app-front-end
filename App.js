@@ -13,6 +13,9 @@ import Step4 from './screens/regisitration/Step4'
 import Step5 from './screens/regisitration/Step5'
 import Step6 from './screens/regisitration/Step6'
 
+
+import ConsumerScan from './screens/consumer/Scan'
+
 import {
   createStackNavigator,
 } from 'react-navigation'
@@ -20,14 +23,15 @@ import {
 
 
 const App = createStackNavigator({
-  // Home: { screen: HomeScreen },
+  Home: { screen: HomeScreen },
   Reg1 : { screen : Step1 },
   Reg2 : { screen : Step2 },
   Reg3 : { screen : Step3 },
   Reg4 : { screen : Step4 },
   Reg5 : { screen : Step5 },
   Reg6 : { screen : Step6 },
-  Display : { screen : Display }
+  Display : { screen : Display },
+  ConsumerScan : { screen : ConsumerScan }
 });
 
 export default App;

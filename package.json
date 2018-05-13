@@ -23,6 +23,7 @@
     "react": "16.3.1",
     "react-native": "~0.55.2",
     "react-native-elements": "^0.19.1",
+    "react-native-fontawesome": "^5.7.0",
     "react-native-navbar": "^2.1.0",
     "react-native-sound": "^0.10.9",
     "react-navigation": "^2.0.1"

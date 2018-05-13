@@ -38,13 +38,13 @@ export default class Step5 extends React.Component {
       <Text style={styles.stepText}>Done</Text>
       <Text style={styles.heading}>Done</Text>
                   <View style={styles.container}>
-
-       
-
-
       </View>
-
-           
+      <Button
+          onPress={() => navigate('ConsumerScan')}
+          title="Scan Goods"
+          color="#841584"
+          accessibilityLabel="Learn more about this purple button"
+      />
       </View>
     );
   }

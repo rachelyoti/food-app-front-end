@@ -14,7 +14,13 @@ export default class HomeScreen extends React.Component {
         <Text>Home </Text>
         <Button
             onPress={() => navigate('Reg1')}
-            title="Get Started"
+            title="Add Goods"
+            color="#841584"
+            accessibilityLabel="Learn more about this purple button"
+        />
+        <Button
+            onPress={() => navigate('ConsumerScan')}
+            title="Scan Goods"
             color="#841584"
             accessibilityLabel="Learn more about this purple button"
         />
