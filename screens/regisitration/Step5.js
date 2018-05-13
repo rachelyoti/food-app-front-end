@@ -56,15 +56,19 @@ export default class Step5 extends React.Component {
       // Hit composer END point to create package
       fetch('https://webhook.site/52f2ad00-5eb5-4546-878d-98812af2abd4', {
       // fetch('http://1a24b2aa.ngrok.io/api/grownyc.Package', {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(this.state.package),
-    });
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(this.state.package),
+      }).then(res =>{
+        const { navigate } = this.props.navigation;
+        console.log("res>>", res);
+        return navigate("Reg6");
+      })
 
-      Vibration.vibrate(1000)
+      Vibration.vibrate()
       // Alert.alert(
       //   'Open this URL?',
       //   this.state.lastScannedUrl,
@@ -108,8 +112,8 @@ export default class Step5 extends React.Component {
         <StatusBar hidden />
       </View>
 
-      {
-        this.state.id &&
+{/*       {
+        this.state.package.packageId &&
           <Button
             onPress={() => navigate('Reg6', this.state)}
             title="Next Step"
@@ -117,7 +121,7 @@ export default class Step5 extends React.Component {
             backgroundColor="#1dc890"
             containerViewStyle={styles.buttonContainer}
           />
-      }           
+      } */}           
       </View>
     );
   }
